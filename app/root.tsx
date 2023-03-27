@@ -11,6 +11,7 @@ import {
 import tailwindStylesheetUrl from "~/styles/tailwind.css";
 
 export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
   { rel: "stylesheet", href: tailwindStylesheetUrl },
 ];
 

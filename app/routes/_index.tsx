@@ -1,113 +1,82 @@
+import { Link } from "@remix-run/react";
+import { buttonVariants } from "~/components/button";
+import { cn } from "~/utils/cn";
+
 export default function Index() {
   return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-      <div className="relative sm:pb-16 sm:pt-8">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="https://user-images.githubusercontent.com/120728481/228025757-0c69521e-f2a3-4666-90fd-8526c3491ce2.jpg"
-                alt="Ice from Iceland"
-              />
-              <div className="absolute inset-0 bg-cyan-200 mix-blend-multiply" />
-            </div>
-            <div className="relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pb-20 lg:pt-32">
-              <h1 className="text-center text-6xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                <span className="block uppercase text-blue-700 drop-shadow-md">
-                  Ice Stack
-                </span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-                Check the README.md file for instructions on how to get this
-                project deployed.
-              </p>
-              <a href="https://remix.run">
-                <img
-                  src="https://user-images.githubusercontent.com/1500684/158298926-e45dafff-3544-4b69-96d6-d3bcc33fc76a.svg"
-                  alt="Remix"
-                  className="mx-auto mt-16 w-full max-w-[12rem] md:max-w-[16rem]"
-                />
-              </a>
-            </div>
+    <div className="bg-white">
+      <header className="absolute inset-x-0 top-0 z-50">
+        <nav
+          className="flex mx-auto max-w-7xl items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div className="flex lg:flex-1">
+            <Link to="/" className="-m-1.5 p-1.5">
+              <h4 className="text-xl font-semibold tracking-tight">
+                Ice-Stack
+              </h4>
+            </Link>
           </div>
-        </div>
+          <div className="flex flex-1 justify-end">
+            <Link
+              to="/login"
+              className={cn(
+                buttonVariants({ size: "sm", variant: "outline" }),
+                "px-4"
+              )}
+            >
+              Log in
+            </Link>
+          </div>
+        </nav>
+      </header>
 
-        <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8">
-          <div className="mt-6 flex flex-wrap justify-center gap-8">
-            {[
-              {
-                src: "https://raw.githubusercontent.com/supabase/supabase/master/packages/common/assets/images/supabase-logo-wordmark--light.svg",
-                alt: "Supabase",
-                href: "https://supabase.com",
-              },
-              {
-                src: "https://fly.io/public/images/brand/logo-dark.svg",
-                alt: "Fly.io",
-                href: "https://fly.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764484-ad64a21a-d7fb-47e3-8669-ec046da20c1f.svg",
-                alt: "Prisma",
-                href: "https://prisma.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764276-a516a239-e377-4a20-b44a-0ac7b65c8c14.svg",
-                alt: "Tailwind",
-                href: "https://tailwindcss.com",
-              },
-              {
-                src: "https://github.com/colinhacks/zod/raw/master/logo.svg",
-                alt: "Zod",
-                href: "https://zod.dev/",
-              },
-              {
-                src: "https://raw.githubusercontent.com/github/explore/60cd2530141f67f07a947fa2d310c482e287e387/topics/playwright/playwright.png",
-                alt: "Playwright",
-                href: "https://playwright.dev/",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772386-75444196-0604-4340-af28-53b236faa182.svg",
-                alt: "MSW",
-                href: "https://mswjs.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772447-00fccdce-9d12-46a3-8bb4-fac612cdc949.svg",
-                alt: "Vitest",
-                href: "https://vitest.dev",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772662-92b0dd3a-453f-4d18-b8be-9fa6efde52cf.png",
-                alt: "Testing Library",
-                href: "https://testing-library.com",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772934-ce0a943d-e9d0-40f8-97f3-f464c0811643.svg",
-                alt: "Prettier",
-                href: "https://prettier.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772990-3968ff7c-b551-4c55-a25c-046a32709a8e.svg",
-                alt: "ESLint",
-                href: "https://eslint.org",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157773063-20a0ed64-b9f8-4e0b-9d1e-0b65a3d4a6db.svg",
-                alt: "TypeScript",
-                href: "https://typescriptlang.org",
-              },
-            ].map((img) => (
-              <a
-                key={img.href}
-                href={img.href}
-                className="flex h-16 w-32 justify-center p-1 grayscale transition focus:grayscale-0 hover:grayscale-0"
+      <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+          <svg
+            className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+            viewBox="0 0 1155 678"
+          >
+            <path
+              fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+              fillOpacity=".3"
+              d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+            />
+            <defs>
+              <linearGradient
+                id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+                x1="1155.49"
+                x2="-78.208"
+                y1=".177"
+                y2="474.645"
+                gradientUnits="userSpaceOnUse"
               >
-                <img alt={img.alt} src={img.src} />
-              </a>
-            ))}
+                <stop stopColor="#9089FC" />
+                <stop offset={1} stopColor="#FF80B5" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Ice-Stack
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              The Remix Stack for deploying to Fly with Supabase,
+              authentication, testing, linting, formatting, etc.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link
+                to="/register"
+                className={cn(buttonVariants({ size: "lg" }))}
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
