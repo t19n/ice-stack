@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import { buttonVariants } from "~/components/button";
 import { cn } from "~/utils/cn";
+import logo from "~/assets/logo.svg";
 
 export default function Index() {
   return (
@@ -12,9 +13,7 @@ export default function Index() {
         >
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <h4 className="text-xl font-semibold tracking-tight">
-                Ice-Stack
-              </h4>
+              <img src={logo} alt="Ice-Stack Logo" className="w-auto h-6" />
             </Link>
           </div>
           <div className="flex flex-1 justify-end">
@@ -59,10 +58,10 @@ export default function Index() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
               Ice-Stack
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="leading-7 [&:not(:first-child)]:mt-6">
               The Remix Stack for deploying to Fly with Supabase,
               authentication, testing, linting, formatting, etc.
             </p>
